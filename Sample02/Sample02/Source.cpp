@@ -16,6 +16,5 @@ int main(int argc, char** argv) {
 	Receipt foundReceipt = cr1->FindReceipt(1003);
 	std::cout	<< "Found receipt with ID: " << foundReceipt.GetId() << " Price: " 
 				<< foundReceipt.GetPrice() << " DPH: " << foundReceipt.GetDph() << "%\n";
-
 	return 0;
 }

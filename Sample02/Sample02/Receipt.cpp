@@ -1,6 +1,6 @@
 #include "Receipt.h"
 
-void Receipt::SetId(int id) {
+void Receipt::SetId(unsigned int id) {
 	this->id = id;
 }
 int Receipt::GetId() const {

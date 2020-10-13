@@ -9,7 +9,7 @@ class Receipt
 	double dph;		// tax in percentage
 
 public:
-	void SetId(int id);
+	void SetId(unsigned int id);
 	int GetId() const;
 	void SetPrice(double price);
 	double GetPrice() const;

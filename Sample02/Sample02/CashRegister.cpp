@@ -29,7 +29,7 @@ Receipt& CashRegister::CreateReceipt(double cost, double dph) {
 Receipt& CashRegister::FindReceipt(int id) {
 	if (receiptsCount <= 0)
 	{
-		throw new std::exception("There is no receipt.");
+		throw std::exception("There is no receipt.");
 	}
 	else {
 		for (int i = 0; i < receiptsCount; i++){
@@ -46,10 +46,6 @@ Receipt& CashRegister::FindReceipt(int id) {
 
 double CashRegister::GetSum() const {
 	double sum = 0;
-	if (receiptsCount <= 0)
-	{
-		return 0;
-	}
 	for (int i = 0; i < receiptsCount; i++)
 	{
 		sum += receipts[i].GetPrice();
@@ -59,10 +55,6 @@ double CashRegister::GetSum() const {
 
 double CashRegister::GetSumTaxed() const {
 	double sum = 0;
-	if (receiptsCount <= 0)
-	{
-		return 0;
-	}
 	for (int i = 0; i < receiptsCount; i++)
 	{
 		sum += (receipts[i].GetPrice()*(1+ receipts[i].GetDph()/100));

@@ -11,7 +11,7 @@ Game::Game(int size) {
 	this->m_objects = new Object * [m_size];
 }
 Game::~Game() {
-	for (int i = 0; i < m_size; i++)
+	for (int i = 0; i < m_counter; i++)
 	{
 		delete m_objects[i];
 	}

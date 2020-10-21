@@ -1,6 +1,8 @@
 #include "Time.h"
 #include <string>
 
+using namespace std;
+
 Time::Time(int hours, int minutes, int seconds) {
 	this->m_hours = hours%24;
 	this->m_minutes = minutes%60;

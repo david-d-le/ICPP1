@@ -11,7 +11,7 @@ private:
 	int m_seconds;
 public:
 	int compareTo(IComparable* obj) const;
-	string toString() const;
+	std::string toString() const;
 	Time(int hours, int minutes, int seconds);
 };
 

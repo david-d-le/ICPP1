@@ -10,8 +10,8 @@ private:
 	int m_minutes;
 	int m_seconds;
 public:
-	int compareTo(IComparable* obj) const;
-	std::string toString() const;
+	int compareTo(IComparable* obj) const override;
+	std::string toString() const override;
 	Time(int hours, int minutes, int seconds);
 };
 

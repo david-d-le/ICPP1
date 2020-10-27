@@ -10,7 +10,15 @@ Time::Time(int hours, int minutes, int seconds) {
 }
 
 int Time::compareTo(IComparable* obj) const {
+	if (obj == nullptr)
+	{
+		throw "nullptr error";
+	}
 	Time* right = dynamic_cast<Time*>(obj);
+	if (right == nullptr)
+	{
+		throw "not Time class";
+	}
 	if (m_hours > right->m_hours){
 		return 1;
 	}else if (m_hours < right->m_hours) {

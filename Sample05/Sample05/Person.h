@@ -10,9 +10,12 @@ namespace Entity {
 	private:
 		std::string m_name;
 		std::string m_phone;
-		int m_id;
+		const int m_id;
 	public:
 		Person(std::string name, std::string phone, int id);
+		int GetId() const;
+		std::string GetName() const;
+		std::string GetPhone() const;
 	};
 }
 

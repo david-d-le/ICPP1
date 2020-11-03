@@ -15,9 +15,8 @@ namespace Model{
 			Entity::Person m_data;
 			ListNode(Entity::Person person);
 		};
-
-	private:
 		ListNode* m_beginning;
+		
 	public:
 		PhoneBook();
 		~PhoneBook();

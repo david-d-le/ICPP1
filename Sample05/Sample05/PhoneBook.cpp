@@ -38,7 +38,7 @@ std::string Model::PhoneBook::FindPhone(std::string name) const {
 		}
 		next = next->m_next;
 	}
-	throw "Phone not found with given name";
+	throw std::invalid_argument("Phone not found with given name");
 }
 std::string Model::PhoneBook::FindPhone(int id) const {
 	if (id < 0)
@@ -52,7 +52,7 @@ std::string Model::PhoneBook::FindPhone(int id) const {
 		}
 		next = next->m_next;
 	}
-	throw "Phone not found with given id";
+	throw std::invalid_argument("Phone not found with given id");
 }
 
 Model::PhoneBook::ListNode::ListNode(Entity::Person person) : m_data(person), m_next(nullptr) {}

@@ -55,49 +55,59 @@ void saveBinary() {
 	Person people[3] = { person1, person2, person3 };
 
 	std::ofstream to{};
-	to.open("file.bin", std::ofstream::binary);
+	to.open("file.bin", std::ios_base::binary);
 	if (to.is_open())
 	{
 		for (int i = 0; i < 3; i++)
 		{
-			to << people[i];
+
+			to.write((char*)&people[i], sizeof(people[i]));
+			
 		}
 		to.close();
 	}
+
 }
 
 void loadBinary() {
+	/* https://www.tutorialspoint.com/reading-and-writing-binary-file-in-c-cplusplus */
 	std::ifstream in{};
-	in.open("file.bin", std::ofstream::binary);
-	int counter = 0;
-	Person p;
-	while (!in.eof()) {
-		in >> p;
-		counter++;
+	int count = 0;
+	in.open("file.bin", std::ios_base::binary);
+	if (in.is_open())
+	{
+		in.seekg(0, std::ios_base::end);
+		int end = in.tellg();
+		in.seekg(0, std::ios_base::beg);
+		while (in.tellg() != end)
+		{
+			in.seekg(sizeof(Person), std::ios_base::cur);
+			count++;
+		}
 	}
 	in.close();
 
-
-	Person* people = new Person[counter];
-	in.open("file.bin", std::ofstream::binary);
+	Person* people = new Person[count];
+	in.open("file.bin", std::ios_base::binary);
+	
 	if (in.is_open())
 	{
-		for (int i = 0; i < counter; i++)
+		//TODO
+		for (int i = 0; i < count; i++)
 		{
-			in >> people[i];
-			std::cout << people[i] << "\n";
+			in.read((char*)&people[i], sizeof(Person));
+			std::cout << std::endl << people[i];
 		}
-		std::cout << "number of persons in file: " << counter;
+		std::cout << std::endl << "number of persons in file: " << count;
 		in.close();
 	}
-	delete[] people;
 }
 
 int main(int argc, char** argv) {
 	
 	save();
 	load();
-	std::cout << "\n\n";
+	std::cout << std::endl;
 	saveBinary();
 	loadBinary();
 

@@ -2,12 +2,9 @@
 
 Address::Address(std::string street, std::string city, int postalCode)
 	: _street(street), _city(city), _postalCode(postalCode){
-
-
 }
 
 Address::~Address(){
-
 }
 
 

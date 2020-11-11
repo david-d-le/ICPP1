@@ -112,12 +112,13 @@ void loadBinary() {
 			std::istringstream ss(s);
 			
 			ss >> people[i];
-
+			delete s;
 			std::cout << std::endl << people[i];
 		}
 		
 		in.close();
 	}
+	delete[] people;
 }
 
 

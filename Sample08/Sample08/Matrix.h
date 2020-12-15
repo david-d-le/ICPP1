@@ -94,7 +94,7 @@ inline Matrix<T>::~Matrix(){
 template<typename T>
 inline void Matrix<T>::Set(int row, int column, T value){
 	checkInput(row, column);
-	_matrix[row][column] = T;
+	_matrix[row][column] = value;
 }
 
 template<typename T>
